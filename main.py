@@ -60,7 +60,7 @@ app.config['KASM_API_KEY'] = os.getenv('KASM_API_KEY')
 app.config['KASM_API_KEY_SECRET'] = os.getenv('KASM_API_KEY_SECRET')
 
 from flask_cors import CORS
-CORS(app)  # This allows all origins, your frontend can now call /api/ainpc/prompt
+CORS(app, supports_credentials=True, origins=['http://localhost:4500', 'http://127.0.0.1:4500', 'http://localhost:8587', 'http://127.0.0.1:8587'])
 
 
 
